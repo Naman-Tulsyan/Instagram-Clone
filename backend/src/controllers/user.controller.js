@@ -104,7 +104,8 @@ export const loginUser = async (req, res) => {
     // to make sure cookies are not modified in frontend
     const options = {
       httpOnly: true,
-      sameSite: "Strict",
+      secure: true,
+      sameSite: "None",
     };
 
     return res.status(200).cookie("accessToken", accessToken, options).json({
